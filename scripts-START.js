@@ -26,13 +26,13 @@ function displayTimeLeft(seconds) {
     const display = `${minutes}:${remainderSeconds < 10 ? '0' : ''}${remainderSeconds}`;
     timerDisplay.textContent = display;
     document.title = display;
-    console.log({minutes, remainderSeconds});
+    // console.log({minutes, remainderSeconds});
 }
 
 function displayEndTime(timestamp) {
     const end = new Date(timestamp);
     const hour = end.getHours();
-    const twelveHour = hour > 12 ? hour - 12 : hour;
+    const twelveHour = hour > 12 ? hour - 12 : hour === 0 ? 12 : hour;
     const minutes = end.getMinutes();
     endTime.textContent = `Be Back at ${twelveHour}:${minutes < 10 ? '0' : ''}${minutes}`;
 }
